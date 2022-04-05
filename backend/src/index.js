@@ -4,6 +4,7 @@ import controllerUsuarios from './controllers/controller.usuarios.js';
 import controllerMercados from './controllers/controller.mercados.js';
 import controllerProdutos from './controllers/controller.produtos.js';
 import controllerPedidos from './controllers/controller.pedidos.js';
+import basicAuth from './config/basic-auth.js';
 
 const app = express();
 
@@ -11,6 +12,8 @@ const app = express();
 app.use(cors());
 //middlare do json
 app.use(express.json());
+
+app.use( basicAuth );
 
 app.use( controllerUsuarios );
 app.use( controllerMercados );
